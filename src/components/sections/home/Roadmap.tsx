@@ -109,10 +109,10 @@ function DesktopRoadmap() {
       {/* Cards row */}
       <div className="grid grid-cols-4 gap-5">
         {roadmap.map((item, i) => (
-          <Reveal key={item.title} delay={i * 0.07}>
+          <Reveal key={item.title} delay={i * 0.07} className="h-full">
             <div
               className={cn(
-                "p-4 rounded-sm border transition-[border-color,box-shadow] duration-300",
+                "h-full p-4 rounded-sm border transition-[border-color,box-shadow] duration-300",
                 item.status === "active"
                   ? "border-foreground/25 bg-surface hover:border-foreground/40 hover:shadow-[0_8px_32px_rgba(240,237,232,0.07)]"
                   : "border-border bg-surface/50 hover:border-foreground/20"

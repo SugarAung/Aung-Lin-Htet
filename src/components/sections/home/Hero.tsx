@@ -125,11 +125,11 @@ export default function Hero() {
   });
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
       <CursorGlow />
       <BackgroundGlow />
 
-      <Container className="relative z-10 pt-28 pb-10 md:pt-32 md:pb-16">
+      <Container className="relative z-10 flex-1 flex flex-col justify-center pt-24 pb-10">
         <div className="grid md:grid-cols-[1fr_340px] lg:grid-cols-[1fr_400px] md:gap-12 lg:gap-20 md:items-center">
         <div>
 
