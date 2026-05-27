@@ -26,7 +26,7 @@ function BrowserMockupCard({ site, reduced }: BrowserMockupCardProps) {
   return (
     <motion.article
       className={cn(
-        "flex flex-col w-full",
+        "flex flex-col w-full h-full",
         "bg-surface border border-border rounded-sm overflow-hidden",
         "hover:border-foreground/20 hover:shadow-[0_8px_32px_rgba(240,237,232,0.07)]",
         "transition-[border-color,box-shadow] duration-300"
@@ -91,7 +91,7 @@ function BrowserMockupCard({ site, reduced }: BrowserMockupCardProps) {
       </div>
 
       {/* ── Card body ── */}
-      <div className="p-5 flex flex-col gap-3">
+      <div className="flex-1 p-5 flex flex-col gap-3">
         <div className="flex items-start justify-between gap-3">
           <h3 className="text-xl font-display italic text-foreground leading-tight">
             {site.name}
@@ -104,7 +104,7 @@ function BrowserMockupCard({ site, reduced }: BrowserMockupCardProps) {
         <div className="rule" />
 
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-1.5">
+        <div className="flex flex-wrap gap-1.5 flex-1">
           {site.tech.map((tag) => (
             <Badge key={tag} className="px-2 py-0.5 text-[10px]">
               {tag}
@@ -112,21 +112,27 @@ function BrowserMockupCard({ site, reduced }: BrowserMockupCardProps) {
           ))}
         </div>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between mt-1">
-          <span className="text-label">{site.status}</span>
-          <span className="font-mono text-xs text-muted-foreground/40">{site.year}</span>
+        {/* Footer — pinned to bottom */}
+        <div className="mt-auto flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <span className="text-label">{site.status}</span>
+            <span className="font-mono text-xs text-muted-foreground/40">{site.year}</span>
+          </div>
+          {site.url ? (
+            <a
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-200 self-start pb-1 border-b border-transparent hover:border-foreground/30"
+            >
+              Visit Site ↗
+            </a>
+          ) : (
+            <span className="text-[11px] font-mono uppercase tracking-wider text-foreground/20">
+              In Development
+            </span>
+          )}
         </div>
-        {site.url && (
-          <a
-            href={site.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-200 self-start pb-1 border-b border-transparent hover:border-foreground/30 mt-1"
-          >
-            Visit Site ↗
-          </a>
-        )}
       </div>
     </motion.article>
   );
@@ -163,7 +169,7 @@ export default function ClientWebsites() {
         {/* Card grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {clientWebsites.map((site, i) => (
-            <Reveal key={site.id} delay={i * 0.08}>
+            <Reveal key={site.id} delay={i * 0.08} className="h-full">
               <BrowserMockupCard site={site} reduced={reduced} />
             </Reveal>
           ))}

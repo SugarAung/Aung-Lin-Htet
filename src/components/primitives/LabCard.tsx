@@ -30,7 +30,7 @@ export default function LabCard({ item, index }: LabCardProps) {
   return (
     <motion.article
       className={cn(
-        "flex flex-col w-full min-h-[360px]",
+        "flex flex-col w-full min-h-[360px] h-full",
         "bg-surface border border-border rounded-sm p-6",
         "hover:border-foreground/20 hover:shadow-[0_8px_32px_rgba(240,237,232,0.07)]",
         "transition-[border-color,box-shadow] duration-300"

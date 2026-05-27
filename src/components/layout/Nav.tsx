@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
@@ -58,7 +57,11 @@ export default function Nav() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
     >
-      <Link href="/" aria-label="Home" className="flex items-center gap-2.5">
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+        className="flex items-center gap-2.5"
+      >
         <Image
           src="/images/profile.png"
           alt=""
@@ -69,7 +72,7 @@ export default function Nav() {
         <span className="hidden sm:block text-sm font-sans text-foreground/70 hover:text-foreground transition-colors">
           Aung Lin Htet
         </span>
-      </Link>
+      </button>
 
       <nav aria-label="Main navigation" className="flex items-center gap-6 md:gap-10">
         {links.map(({ href, label }) => {

@@ -40,7 +40,7 @@ export default function AILab() {
         {/* ── Lab cards ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {labItems.map((item, i) => (
-            <Reveal key={item.id} delay={i * 0.07}>
+            <Reveal key={item.id} delay={i * 0.07} className="h-full">
               <LabCard item={item} index={i} />
             </Reveal>
           ))}

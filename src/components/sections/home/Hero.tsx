@@ -102,7 +102,7 @@ function BackgroundGlow() {
 const ROLES = [
   "AI Developer",
   "Web Developer",
-  "Solopreneur · 4 Products in 4 Years",
+  "Solopreneur · Building Products Solo",
 ] as const;
 
 const CTAS: {
@@ -129,7 +129,7 @@ export default function Hero() {
       <CursorGlow />
       <BackgroundGlow />
 
-      <Container className="relative z-10 py-24 md:py-32">
+      <Container className="relative z-10 pt-28 pb-10 md:pt-32 md:pb-16">
         <div className="grid md:grid-cols-[1fr_340px] lg:grid-cols-[1fr_400px] md:gap-12 lg:gap-20 md:items-center">
         <div>
 

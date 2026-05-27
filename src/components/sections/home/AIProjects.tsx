@@ -136,7 +136,7 @@ export default function AIProjects() {
         {/* ── Project grid ── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {aiProjects.map((project, i) => (
-            <Reveal key={project.id} delay={i * 0.07}>
+            <Reveal key={project.id} delay={i * 0.07} className="h-full">
               <AICard project={project} index={i} />
             </Reveal>
           ))}

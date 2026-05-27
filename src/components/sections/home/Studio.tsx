@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Play, Camera, Music2 } from "lucide-react";
 import Container from "@/components/primitives/Container";
 import SectionWrapper from "@/components/primitives/SectionWrapper";
@@ -26,23 +25,38 @@ export default function Studio() {
   return (
     <SectionWrapper id="studio" className="border-t border-border">
       <Container>
-        <div className="flex flex-col items-center py-4">
+        <div className="flex flex-col items-center text-center py-16 md:py-24 max-w-2xl mx-auto">
 
           <Reveal>
-            <p className="text-label text-center mb-8">ALH Studio</p>
+            <p className="text-label text-foreground/40 tracking-widest mb-8">
+              ALH STUDIO
+            </p>
           </Reveal>
 
           <Reveal delay={0.1}>
-            <Image
-              src="/ALH_Studio_Watermark_Under1MB.png"
-              alt="ALH Studio"
-              width={180}
-              height={90}
-              className="opacity-80 object-contain mb-10"
-            />
+            <h2 className="text-display-xl font-display italic text-foreground leading-none mb-8">
+              Building my life<br />one day at a time.
+            </h2>
           </Reveal>
 
           <Reveal delay={0.2}>
+            <div className="flex flex-col gap-1 mb-8">
+              <p className="text-base md:text-lg text-muted-foreground">
+                Daily progress journal.
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground">
+                Maxing Out My Stats.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.3}>
+            <p className="text-sm text-muted-foreground/60 max-w-md mb-12">
+              Documenting everything — the wins, the failures, and the work in between.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.4}>
             <div className="flex items-center gap-8">
               {SOCIALS.map(({ label, href, icon: Icon }) => (
                 <a
@@ -50,10 +64,10 @@ export default function Studio() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={label}
-                  className="text-foreground/50 hover:text-foreground transition-colors duration-200"
+                  className="flex items-center gap-2 text-foreground/40 hover:text-foreground transition-colors duration-200"
                 >
-                  <Icon size={22} />
+                  <Icon size={16} />
+                  <span className="text-label">{label}</span>
                 </a>
               ))}
             </div>
