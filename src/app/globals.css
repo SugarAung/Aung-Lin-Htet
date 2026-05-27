@@ -1,26 +1,186 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─── Portfolio always dark — no light mode ─── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Semantic color tokens */
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-surface:            var(--surface);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-border:             var(--border);
+  --color-ring:               var(--ring);
+  --color-input:              var(--input);
+
+  /* shadcn compat */
+  --color-card:               var(--surface);
+  --color-card-foreground:    var(--foreground);
+  --color-popover:            var(--surface);
+  --color-popover-foreground: var(--foreground);
+  --color-primary:            var(--foreground);
+  --color-primary-foreground: var(--background);
+  --color-secondary:          var(--surface);
+  --color-secondary-foreground: var(--foreground);
+  --color-accent:             var(--surface);
+  --color-accent-foreground:  var(--foreground);
+  --color-destructive:        oklch(0.577 0.245 27.325);
+
+  /* Fonts */
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
+  --font-display: var(--font-instrument-serif);
+
+  /* Radius — minimal, near-zero for this aesthetic */
+  --radius-sm:  2px;
+  --radius-md:  4px;
+  --radius-lg:  6px;
+  --radius-xl:  8px;
+  --radius-2xl: 12px;
+  --radius:     4px;
+
+  /* Typography scale */
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg:   1.125rem;  /* 18px */
+  --text-xl:   1.25rem;   /* 20px */
+  --text-2xl:  1.5rem;    /* 24px */
+  --text-3xl:  1.875rem;  /* 30px */
+  --text-4xl:  2.25rem;   /* 36px */
+  --text-5xl:  3rem;      /* 48px */
+  --text-6xl:  3.75rem;   /* 60px */
+  --text-7xl:  4.5rem;    /* 72px */
+  --text-8xl:  6rem;      /* 96px */
+  --text-9xl:  8rem;      /* 128px */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Dark palette (always applied) ─── */
+:root {
+  --background:       #080808;
+  --foreground:       #f0ede8;
+  --surface:          #111111;
+  --muted:            #1a1a1a;
+  --muted-foreground: #666666;
+  --border:           rgba(240, 237, 232, 0.08);
+  --ring:             rgba(240, 237, 232, 0.2);
+  --input:            rgba(240, 237, 232, 0.06);
+
+  /* shadcn sidebar (unused but avoids token errors) */
+  --sidebar:                    #111111;
+  --sidebar-foreground:         #f0ede8;
+  --sidebar-primary:            #f0ede8;
+  --sidebar-primary-foreground: #080808;
+  --sidebar-accent:             #1a1a1a;
+  --sidebar-accent-foreground:  #f0ede8;
+  --sidebar-border:             rgba(240, 237, 232, 0.08);
+  --sidebar-ring:               rgba(240, 237, 232, 0.2);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    background-color: #080808;
+    color: #f0ede8;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+
+  /* Smooth scroll fallback (Lenis overrides this) */
+  html:not([data-lenis-prevent]) {
+    scroll-behavior: auto;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: #f0ede8;
+    color: #080808;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Page transitions (View Transitions API) ─── */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 180ms ease-in fade-out forwards;
+}
+
+::view-transition-new(root) {
+  animation: 280ms ease-out fade-in forwards;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Typography utilities ─── */
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  /* Cinematic display sizes */
+  .text-display-xl {
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .text-display-lg {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  .text-display-md {
+    font-size: clamp(1.75rem, 4vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  /* Muted label / overline */
+  .text-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  /* Horizontal rule consistent with the border token */
+  .rule {
+    border-top: 1px solid var(--border);
+  }
+
+  /* Hide scrollbar while keeping scroll functionality */
+  .scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
