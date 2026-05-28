@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   alternates: { canonical: "https://aunglintet.com" },
-  verification: { google: "boDspD9i72a-FmwgnF_M1-I4zrLIiiQ1fjzLU4wFKEg" },
+  verification: { google: ["boDspD9i72a-FmwgnF_M1-I4zrLIiiQ1fjzLU4wFKEg", "RaPXu06VDNQW6OTGUeYJzg8UBycz0992k_4pBc-I3cI"] },
 };
 
 export default function RootLayout({
