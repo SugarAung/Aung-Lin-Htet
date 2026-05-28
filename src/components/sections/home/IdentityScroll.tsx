@@ -67,6 +67,7 @@ export default function IdentityScroll() {
   const sectionRef = useRef<HTMLElement>(null);
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const stepBarRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const stepLabelRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const nodeRefs = useRef<(HTMLDivElement | null)[]>([]);
   const counterRef = useRef<HTMLSpanElement>(null);
 
@@ -80,11 +81,14 @@ export default function IdentityScroll() {
 
     const panels = panelRefs.current.filter(Boolean) as HTMLDivElement[];
     const bars = stepBarRefs.current.filter(Boolean) as HTMLDivElement[];
+    const labels = stepLabelRefs.current.filter(Boolean) as HTMLSpanElement[];
     const nodes = nodeRefs.current.filter(Boolean) as HTMLDivElement[];
 
     if (panels.length !== 3) return;
 
     // ── Initial state ────────────────────────────────────────────────────────
+    if (labels[0]) labels[0].style.setProperty("color", "var(--foreground)");
+
     gsap.set(panels[0], { opacity: 1, y: 0 });
     gsap.set(panels[1], { opacity: 0, y: 50 });
     gsap.set(panels[2], { opacity: 0, y: 50 });
@@ -108,6 +112,15 @@ export default function IdentityScroll() {
       bars.forEach((bar, i) => {
         bar.style.opacity = i === active ? "1" : "0.18";
         bar.style.transform = `scaleX(${i === active ? 1 : 0.55})`;
+      });
+
+      labels.forEach((label, i) => {
+        label.style.opacity = i === active ? "1" : "0.18";
+        if (i === active) {
+          label.style.setProperty("color", "var(--foreground)");
+        } else {
+          label.style.removeProperty("color");
+        }
       });
 
       nodes.forEach((node, i) => {
@@ -212,7 +225,8 @@ export default function IdentityScroll() {
                         style={{ opacity: i === 0 ? 1 : 0.18, transform: `scaleX(${i === 0 ? 1 : 0.55})` }}
                       />
                       <span
-                        className="text-label transition-opacity duration-500"
+                        ref={(el) => { stepLabelRefs.current[i] = el; }}
+                        className="text-label transition-[opacity,color] duration-500"
                         style={{ opacity: i === 0 ? 1 : 0.18 }}
                       >
                         {label}

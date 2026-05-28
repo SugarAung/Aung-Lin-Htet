@@ -102,7 +102,7 @@ function BackgroundGlow() {
 const ROLES = [
   "AI Developer",
   "Web Developer",
-  "Solopreneur · Building Products Solo",
+  "Solopreneur",
 ] as const;
 
 const CTAS: {
@@ -207,7 +207,7 @@ export default function Hero() {
         </div>
 
         {/* Right side — 3D voxel coder scene */}
-        <div className="hidden md:flex items-center justify-center">
+        <div className="flex items-center justify-center mt-12 md:mt-0">
           <CoderScene />
         </div>
 

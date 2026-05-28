@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { Code2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#journey", label: "Journey" },
@@ -99,6 +100,7 @@ export default function Nav() {
         >
           <Code2 size={16} />
         </a>
+        <ThemeToggle />
       </nav>
     </motion.header>
   );
