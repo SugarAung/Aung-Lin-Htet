@@ -13,7 +13,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Aung Lin Htet",
-  url: "https://aunglintet.com",
+  url: "https://aunglinhtet.com",
   jobTitle: "AI Developer",
   description:
     "AI Developer and Web Builder based in Singapore. I build AI tools, web apps, and automation systems — and ship them solo.",

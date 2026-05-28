@@ -25,19 +25,19 @@ const DESCRIPTION =
   "AI Developer and Web Builder based in Singapore. I build AI tools, web apps, and automation systems — and ship them solo.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aunglintet.com"),
+  metadataBase: new URL("https://aunglinhtet.com"),
   title: {
     default: "Aung Lin Htet — AI Developer & Web Builder",
     template: "%s | Aung Lin Htet",
   },
   description: DESCRIPTION,
   keywords: ["AI developer", "web developer", "solopreneur", "Singapore", "Next.js", "portfolio", "Aung Lin Htet"],
-  authors: [{ name: "Aung Lin Htet", url: "https://aunglintet.com" }],
+  authors: [{ name: "Aung Lin Htet", url: "https://aunglinhtet.com" }],
   creator: "Aung Lin Htet",
   openGraph: {
     title: "Aung Lin Htet — AI Developer & Web Builder",
     description: DESCRIPTION,
-    url: "https://aunglintet.com",
+    url: "https://aunglinhtet.com",
     siteName: "Aung Lin Htet",
     type: "website",
     images: [{ url: "/images/profile.png", width: 400, height: 400, alt: "Aung Lin Htet" }],
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ["/images/profile.png"],
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
-  alternates: { canonical: "https://aunglintet.com" },
+  alternates: { canonical: "https://aunglinhtet.com" },
   verification: { google: ["boDspD9i72a-FmwgnF_M1-I4zrLIiiQ1fjzLU4wFKEg", "RaPXu06VDNQW6OTGUeYJzg8UBycz0992k_4pBc-I3cI"] },
 };
 
