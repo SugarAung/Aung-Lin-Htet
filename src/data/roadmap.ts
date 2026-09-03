@@ -4,13 +4,13 @@ export const roadmap: RoadmapItem[] = [
   {
     title: "Now",
     description:
-      "Shipping AI tools, deepening Claude API and RAG skills, building client websites via L&L Service.",
+      "Settling into SUTD CSD. Restarting ALH Studio. Shipping AI tools, deepening Claude API and RAG skills.",
     status: "active",
   },
   {
     title: "Next",
     description:
-      "Start SUTD CSD. Restart ALH Studio. Ship one polished, self-hosted AI product.",
+      "Ship one polished, self-hosted AI product.",
     status: "next",
   },
   {

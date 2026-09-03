@@ -6,7 +6,7 @@ export const experience: Experience[] = [
     org: "Singapore Polytechnic",
     period: "Apr 2023 – Mar 2026",
     description:
-      "Computer Engineering diploma across 6 semesters — building projects in AI, software, cloud, embedded systems, and data. Graduated with a GPA of 3.86 / 4.0.",
+      "Six semesters, six different domains: AI, software, cloud, embedded systems, data. Graduated with a 3.86/4.0. This is where the habit of showing up started.",
     type: "education",
   },
   {
@@ -14,7 +14,7 @@ export const experience: Experience[] = [
     org: "YouTube / Instagram / TikTok",
     period: "Apr 2025 – Apr 2026",
     description:
-      "Shared personal development, productivity, and learning content across YouTube, Instagram, and TikTok under The ALH Studio brand. On hiatus since April 2026 — restarting when university begins in September 2026.",
+      "Early experiment in content, personal development and productivity, posted under The ALH Studio brand. First real attempt at building something in public.",
     type: "personal",
   },
   {
@@ -22,7 +22,7 @@ export const experience: Experience[] = [
     org: "Gold Lite",
     period: "Sep 2025 – Feb 2026 · 22 weeks",
     description:
-      "Built an automation system that replaced a manual DICOM medical image migration workflow — reducing an estimated 1,000 days of manual work to a fully automated pipeline. Delivered within 45 days including development, testing, and handover.",
+      "Built an automation workflow that replaced a slow manual process entirely, start to finish, from scratch.",
     type: "work",
   },
   {
@@ -30,15 +30,7 @@ export const experience: Experience[] = [
     org: "Tiny Equation",
     period: "Oct 2025 – Present",
     description:
-      "Contributing to a SUTD-incubated AI startup — working on RAG systems, AI agents, LLM-based automation tools, retrieval logic, prompt design, and evaluation workflows. Last project: multi-agentic architecture for a math problem-solving agent (v1).",
-    type: "work",
-  },
-  {
-    role: "Web Developer / Co-founder",
-    org: "L&L Service + Freelance",
-    period: "Apr 2026 – Present",
-    description:
-      "Co-founding L&L Service alongside a business partner — handling all development while they manage the business side. Also taking on freelance client website projects, built end-to-end with Claude Code.",
+      "Working inside a SUTD-incubated AI startup, currently focused on developing Tiny Mark, one of their core products.",
     type: "work",
   },
   {
@@ -46,8 +38,7 @@ export const experience: Experience[] = [
     org: "Singapore University of Technology and Design (SUTD)",
     period: "Sep 2026",
     description:
-      "Enrolling in SUTD's CSD programme — an 8-term degree combining algorithmic thinking, software engineering, and design principles to build need-driven computing solutions.",
+      "Currently in SUTD's CSD programme, eight terms of algorithmic thinking, software engineering, and design.",
     type: "education",
-    upcoming: true,
   },
 ];

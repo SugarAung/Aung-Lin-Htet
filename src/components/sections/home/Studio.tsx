@@ -1,25 +1,7 @@
-import { Play, Camera, Music2 } from "lucide-react";
 import Container from "@/components/primitives/Container";
 import SectionWrapper from "@/components/primitives/SectionWrapper";
+import Button from "@/components/primitives/Button";
 import Reveal from "@/components/primitives/Reveal";
-
-const SOCIALS = [
-  {
-    label: "YouTube",
-    href: "https://www.youtube.com/@ALH_Studio",
-    icon: Play,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/thealhstudio/",
-    icon: Camera,
-  },
-  {
-    label: "TikTok",
-    href: "https://www.tiktok.com/@thealhstudio",
-    icon: Music2,
-  },
-] as const;
 
 export default function Studio() {
   return (
@@ -29,7 +11,7 @@ export default function Studio() {
 
           <Reveal>
             <p className="text-label text-foreground/40 tracking-widest mb-8">
-              ALH STUDIO
+              ALH Studio
             </p>
           </Reveal>
 
@@ -51,25 +33,51 @@ export default function Studio() {
           </Reveal>
 
           <Reveal delay={0.3}>
-            <p className="text-sm text-muted-foreground/60 max-w-md mb-12">
-              Documenting everything — the wins, the failures, and the work in between.
+            <p className="text-base text-muted-foreground leading-relaxed mb-12 max-w-xl">
+              I&apos;m just building my own journey, writing my own story as
+              it happens. If anything on this page resonates, drop a follow
+              or let&apos;s connect.
             </p>
           </Reveal>
 
           <Reveal delay={0.4}>
-            <div className="flex items-center gap-8">
-              {SOCIALS.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-foreground/40 hover:text-foreground transition-colors duration-200"
-                >
-                  <Icon size={16} />
-                  <span className="text-label">{label}</span>
-                </a>
-              ))}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <Button
+                as="a"
+                href="https://www.youtube.com/@ALH_Studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+              >
+                YouTube ↗
+              </Button>
+              <Button
+                as="a"
+                href="https://www.instagram.com/thealhstudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+              >
+                Instagram ↗
+              </Button>
+              <Button
+                as="a"
+                href="https://www.tiktok.com/@thealhstudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+              >
+                TikTok ↗
+              </Button>
+              <Button
+                as="a"
+                href="https://www.linkedin.com/in/aung-lin-htet/"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+              >
+                LinkedIn ↗
+              </Button>
             </div>
           </Reveal>
 

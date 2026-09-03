@@ -16,18 +16,18 @@ interface Step {
 const STEPS: Step[] = [
   {
     num: "01",
-    label: "AI Builder",
-    desc: "RAG systems, LLM workflows, agent-based tools, and AI apps — built from scratch, not just configured.",
+    label: "Student",
+    desc: "SUTD life and staying consistent under real academic pressure.",
   },
   {
     num: "02",
-    label: "Software Developer",
-    desc: "Full-stack web apps, APIs, automation pipelines, and deployable products.",
+    label: "Builder",
+    desc: "Experimenting and building projects, learning from people ahead of me. The founder part comes in a couple years. This is the groundwork.",
   },
   {
     num: "03",
-    label: "Content Creator",
-    desc: "Personal development content on YouTube, Instagram, and TikTok. On hiatus — restarting September 2026.",
+    label: "Discipline",
+    desc: "The thing that would drive me closer to the person I want to be.",
   },
 ];
 
@@ -37,7 +37,7 @@ function MobileView() {
   return (
     <section className="lg:hidden border-t border-border">
       <Container className="py-20">
-        <p className="text-label mb-10">Three ways I build.</p>
+        <p className="text-label mb-10">Three things, right now.</p>
         <div className="flex flex-col">
           {STEPS.map(({ num, label, desc }, i) => (
             <div
@@ -212,7 +212,7 @@ export default function IdentityScroll() {
             {/* ── Left: heading + step indicators ── */}
             <div className="flex flex-col justify-between h-full py-8">
               <div>
-                <p className="text-label mb-8">Three ways I build.</p>
+                <p className="text-label mb-8">Three things, right now.</p>
 
                 {/* Step bars */}
                 <div className="flex flex-col gap-5">

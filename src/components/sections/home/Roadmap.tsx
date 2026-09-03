@@ -59,7 +59,7 @@ function MobileRoadmap() {
             <p className="text-base font-display italic text-foreground leading-snug mb-2">
               {item.title}
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+            <p className="text-base text-muted-foreground leading-relaxed max-w-sm">
               {item.description}
             </p>
           </div>
@@ -122,7 +122,7 @@ function DesktopRoadmap() {
               <p className="text-base font-display italic text-foreground leading-snug mb-2">
                 {item.title}
               </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>

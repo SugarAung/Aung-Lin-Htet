@@ -275,16 +275,6 @@ export default function CoderScene() {
           <Scene reduced={reduced} isDark={isDark} />
         </Canvas>
       </div>
-
-      {/* Subtitle */}
-      <motion.p
-        className="mt-4 text-label text-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 4.6 }}
-      >
-        I build with AI
-      </motion.p>
     </motion.div>
   );
 }

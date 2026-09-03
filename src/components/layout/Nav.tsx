@@ -9,13 +9,13 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
+  { href: "#about",   label: "About"   },
   { href: "#journey", label: "Journey" },
-  { href: "#skills",  label: "Skills"  },
-  { href: "#work",    label: "Work"    },
-  { href: "#contact", label: "Contact" },
+  { href: "#roadmap", label: "Roadmap" },
+  { href: "#studio",  label: "Connect" },
 ];
 
-const SECTION_IDS = ["journey", "skills", "work", "contact"];
+const SECTION_IDS = ["about", "journey", "roadmap", "studio"];
 
 export default function Nav() {
   const reduced = useReducedMotion();

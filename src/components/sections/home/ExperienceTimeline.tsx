@@ -90,7 +90,7 @@ function TimelineCard({ item }: { item: Experience }) {
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex flex-col gap-0.5">
-          <p className="text-sm font-display italic text-foreground leading-tight">
+          <p className="text-base font-display italic text-foreground leading-tight">
             {item.role}
           </p>
           <p className="text-label">{item.org}</p>
@@ -101,13 +101,13 @@ function TimelineCard({ item }: { item: Experience }) {
           ) : (
             <Badge>{TYPE_LABELS[item.type]}</Badge>
           )}
-          <span className="font-mono text-[10px] text-muted-foreground/50">
+          <span className="font-mono text-xs text-muted-foreground/50">
             {item.period}
           </span>
         </div>
       </div>
       <div className="rule mb-3" />
-      <p className="text-sm text-muted-foreground leading-relaxed">
+      <p className="text-base text-muted-foreground leading-relaxed">
         {item.description}
       </p>
     </div>

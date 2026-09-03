@@ -22,20 +22,20 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const DESCRIPTION =
-  "AI Developer and Web Builder based in Singapore. I build AI tools, web apps, and automation systems — and ship them solo.";
+  "SUTD scholarship student documenting the journey of building toward owning a business by graduation. Consistency over talent, shown in public.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aunglinhtet.com"),
   title: {
-    default: "Aung Lin Htet — AI Developer & Web Builder",
+    default: "Aung Lin Htet — SUTD Scholar & Content Creator",
     template: "%s | Aung Lin Htet",
   },
   description: DESCRIPTION,
-  keywords: ["AI developer", "web developer", "solopreneur", "Singapore", "Next.js", "portfolio", "Aung Lin Htet"],
+  keywords: ["personal brand", "content creator", "SUTD", "student journey", "building in public", "AI builder", "Singapore", "Next.js", "portfolio", "Aung Lin Htet"],
   authors: [{ name: "Aung Lin Htet", url: "https://aunglinhtet.com" }],
   creator: "Aung Lin Htet",
   openGraph: {
-    title: "Aung Lin Htet — AI Developer & Web Builder",
+    title: "Aung Lin Htet — SUTD Scholar & Content Creator",
     description: DESCRIPTION,
     url: "https://aunglinhtet.com",
     siteName: "Aung Lin Htet",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aung Lin Htet — AI Developer & Web Builder",
+    title: "Aung Lin Htet — SUTD Scholar & Content Creator",
     description: DESCRIPTION,
     images: ["/images/profile.png"],
   },

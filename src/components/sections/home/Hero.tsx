@@ -8,7 +8,6 @@ import {
 } from "motion/react";
 import { useEffect } from "react";
 import Container from "@/components/primitives/Container";
-import Button from "@/components/primitives/Button";
 import CoderScene from "@/components/primitives/CoderScene";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -99,20 +98,8 @@ function BackgroundGlow() {
 }
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
-const ROLES = [
-  "AI Developer",
-  "Web Developer",
-  "Solopreneur",
-] as const;
-
-const CTAS: {
-  label: string;
-  href: string;
-  variant: "primary" | "outline" | "ghost";
-}[] = [
-  { label: "View My Work", href: "#work",    variant: "primary" },
-  { label: "My Journey",   href: "#journey", variant: "outline" },
-];
+const HEADLINE =
+  "SUTD Trailblazer Scholar. Content Creator. Multi-hyphenate builder.";
 
 export default function Hero() {
   const reduced = useReducedMotion();
@@ -157,29 +144,21 @@ export default function Hero() {
             Aung Lin Htet
           </motion.h1>
 
-          {/* Roles */}
+          {/* Headline */}
           <motion.p
             {...ai(makeFade(2.1, 1.2))}
-            className="text-label mb-12"
+            className="text-lg md:text-xl text-foreground/90 font-sans tracking-tight leading-snug max-w-2xl mb-6"
           >
-            {ROLES.map((role, i) => (
-              <span key={role}>
-                {role}
-                {i < ROLES.length - 1 && (
-                  <span className="mx-2 opacity-30">/</span>
-                )}
-              </span>
-            ))}
+            {HEADLINE}
           </motion.p>
 
-          {/* Body copy */}
+          {/* Subline */}
           <motion.p
             {...ai(makeVariant(2.5, 10, 1.2))}
             className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-4"
           >
-            Building AI tools, web apps, and automation systems — and posting the
-            whole journey online. My goal: become a solopreneur who ships full
-            products solo.
+            I do a lot at once, and somehow still show up every day.
+            That&apos;s kind of the whole story.
           </motion.p>
 
           {/* Supporting line */}
@@ -187,23 +166,8 @@ export default function Hero() {
             {...ai(makeFade(2.9, 1.0))}
             className="text-sm text-muted-foreground/60 max-w-xl mb-10"
           >
-            SP Computer Engineering graduate · GPA 3.86 · AI intern at Tiny
-            Equation · SUTD CSD Sep 2026
+            Currently at SUTD.
           </motion.p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-3">
-            {CTAS.map(({ label, href, variant }, i) => (
-              <motion.div
-                key={label}
-                {...ai(makeVariant(3.2 + i * 0.1, 8, 1.0))}
-              >
-                <Button as="a" href={href} variant={variant}>
-                  {label}
-                </Button>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         {/* Right side — 3D voxel coder scene */}
